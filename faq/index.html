@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DocsShelf FAQ - Answers to the most common questions about DocsShelf">
+    <title>FAQ - DocsShelf</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.8;
+            color: #2d3748;
+            background: #f7fafc;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 60px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            color: #1a202c;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .last-updated {
+            color: #718096;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        h2 {
+            color: #2d3748;
+            font-size: 1.4rem;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        p {
+            margin-bottom: 16px;
+            color: #4a5568;
+        }
+
+        a {
+            color: #667eea;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul, ol {
+            padding-left: 25px;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: #4a5568;
+        }
+
+        strong {
+            color: #2d3748;
+        }
+
+        code {
+            background: #edf2f7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* Accordion */
+        details {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        details[open] {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        summary {
+            padding: 14px 18px;
+            font-weight: 600;
+            color: #2d3748;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f7fafc;
+            user-select: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 20px;
+            color: #667eea;
+            font-weight: 300;
+            flex-shrink: 0;
+            margin-left: 12px;
+        }
+
+        details[open] summary::after {
+            content: '−';
+        }
+
+        summary:hover {
+            background-color: #ebf4ff;
+        }
+
+        .answer {
+            padding: 16px 18px;
+            color: #4a5568;
+            border-top: 1px solid #e2e8f0;
+            background-color: #fff;
+        }
+
+        /* Info boxes */
+        .meta-info {
+            background-color: #ebf4ff;
+            padding: 16px 20px;
+            border-left: 4px solid #667eea;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 30px;
+        }
+
+        .meta-info p {
+            margin-bottom: 4px;
+            color: #2d3748;
+        }
+
+        .highlight {
+            background-color: #fffbeb;
+            padding: 16px 20px;
+            border-left: 4px solid #f6ad55;
+            border-radius: 0 6px 6px 0;
+            margin: 20px 0;
+            color: #744210;
+        }
+
+        .highlight strong {
+            color: #744210;
+        }
+
+        .info-box {
+            background-color: #ebf4ff;
+            padding: 16px 20px;
+            border-left: 4px solid #667eea;
+            border-radius: 0 6px 6px 0;
+            margin: 30px 0;
+        }
+
+        /* Table of contents */
+        .toc {
+            background-color: #f7fafc;
+            padding: 18px 24px;
+            border-radius: 8px;
+            margin-bottom: 32px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .toc h3 {
+            margin: 0 0 10px 0;
+            color: #718096;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .toc ol {
+            margin: 0;
+            padding-left: 22px;
+        }
+
+        .toc li {
+            margin-bottom: 4px;
+        }
+
+        .toc a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #667eea;
+        }
+
+        .toc a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section group spacing */
+        .section-group {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="../" class="back-link">← Back to Legal Information</a>
+
+        <div class="header">
+            <h1>Frequently Asked Questions</h1>
+            <p class="last-updated">Last Updated: February 28, 2026</p>
+        </div>
+
+        <div class="meta-info">
+            <p><strong>Application:</strong> DocsShelf — Secure Document Management</p>
+            <p><strong>Support:</strong> <a href="mailto:support@docsshelf.com">support@docsshelf.com</a></p>
+        </div>
+
+        <p>Answers to the most common questions about DocsShelf. Click any question to expand the answer.</p>
+
+        <div class="toc">
+            <h3>Contents</h3>
+            <ol>
+                <li><a href="#account">Account &amp; Login</a></li>
+                <li><a href="#documents">Documents &amp; Scanning</a></li>
+                <li><a href="#categories">Categories &amp; Organisation</a></li>
+                <li><a href="#backup">Backup &amp; Restore</a></li>
+                <li><a href="#security">Security &amp; Privacy</a></li>
+                <li><a href="#troubleshooting">Troubleshooting</a></li>
+            </ol>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <h2 id="account">🔑 Account &amp; Login</h2>
+        <div class="section-group">
+
+            <details>
+                <summary>How do I create an account?</summary>
+                <div class="answer">
+                    Open the app and tap <strong>Create Account</strong> on the login screen. Enter your name, email address, and a strong password. You must agree to the Terms of Service and Privacy Policy to register.
+                </div>
+            </details>
+
+            <details>
+                <summary>I forgot my password. How do I reset it?</summary>
+                <div class="answer">
+                    On the login screen tap <strong>Forgot Password?</strong> and enter your email address. A recovery email will be sent. If you do not receive it, check your spam folder. Note: password recovery requires the email address used during registration.
+                </div>
+            </details>
+
+            <details>
+                <summary>Can I use the app without an account?</summary>
+                <div class="answer">
+                    No. An account is required so your documents and settings can be tied to a secure, encrypted profile. All data stays on your device — the account is local-only and is not sent to any server.
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I set up two-factor authentication (MFA)?</summary>
+                <div class="answer">
+                    Go to <strong>Settings → Security → Two-Factor Authentication</strong>. Tap <em>Enable MFA</em> and scan the QR code with an authenticator app such as Google Authenticator or Authy. Enter the 6-digit code to confirm, then save your backup codes in a safe place.
+                </div>
+            </details>
+
+            <details>
+                <summary>What happens if I lose access to my MFA authenticator?</summary>
+                <div class="answer">
+                    During MFA setup you are given one-time backup codes. Store these somewhere safe (not only on this device). Use a backup code to log in if your authenticator is unavailable. If you have lost both your authenticator and backup codes, please contact support.
+                </div>
+            </details>
+
+            <details>
+                <summary>Can I have multiple accounts on the same device?</summary>
+                <div class="answer">
+                    Yes. Each account stores its own documents, categories, and backups completely separately. Switch accounts by logging out of the current account and logging in with different credentials.
+                </div>
+            </details>
+
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <h2 id="documents">📄 Documents &amp; Scanning</h2>
+        <div class="section-group">
+
+            <details>
+                <summary>What file formats does DocsShelf support?</summary>
+                <div class="answer">
+                    DocsShelf supports <strong>PDF, JPEG, PNG, GIF, HEIC,</strong> and <strong>WebP</strong> files. When scanning with the camera you can choose to save as PDF or as an image (JPEG/PNG).
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I scan a multi-page document?</summary>
+                <div class="answer">
+                    Tap the <strong>Scan</strong> tab, select <em>PDF</em> format, then scan your first page. After confirming it, tap <strong>Add Another Page</strong> to continue. When you have scanned all pages, tap <strong>Combine &amp; Save</strong> to merge them into a single PDF.
+                </div>
+            </details>
+
+            <details>
+                <summary>My scanned document looks blurry. What can I do?</summary>
+                <div class="answer">
+                    <ul>
+                        <li>Ensure adequate lighting — natural light produces the best results.</li>
+                        <li>Hold the camera steady and wait for autofocus to lock before tapping the shutter.</li>
+                        <li>Tap the screen on the document to manually set the focus point.</li>
+                        <li>Use the <strong>edge-sense document scanner</strong> which automatically detects and crops document edges.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I add an existing file from my device?</summary>
+                <div class="answer">
+                    Go to the <strong>Documents</strong> tab and tap the <strong>+</strong> button. Select <em>Upload File</em> to open the file picker. Choose any supported file from your device storage or cloud drives connected to your device.
+                </div>
+            </details>
+
+            <details>
+                <summary>Can I edit or annotate documents?</summary>
+                <div class="answer">
+                    You can add and edit <strong>notes</strong> for any document. Full annotation (drawing, highlights) is not supported in this version and is planned for a future release.
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I delete a document?</summary>
+                <div class="answer">
+                    In the Documents list <strong>swipe left</strong> on a document to reveal the Delete button, or open the document, tap the menu (<strong>⋯</strong>) and choose <em>Delete</em>. Deleted documents are permanently removed and cannot be recovered unless you have a backup.
+                </div>
+            </details>
+
+            <details>
+                <summary>How does OCR (text recognition) work?</summary>
+                <div class="answer">
+                    When you scan or import an image-based document, DocsShelf automatically extracts text using on-device OCR. This text is then searchable. OCR runs in the background and may take a moment on large files.
+                </div>
+            </details>
+
+            <details>
+                <summary>Why is my document search not finding what I expect?</summary>
+                <div class="answer">
+                    Search checks the document <strong>filename</strong>, <strong>OCR-extracted text</strong>, and your manually written <strong>notes</strong>. If OCR has not finished processing a recently added document, try again after a minute. For handwritten text, OCR accuracy depends on legibility.
+                </div>
+            </details>
+
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <h2 id="categories">📁 Categories &amp; Organisation</h2>
+        <div class="section-group">
+
+            <details>
+                <summary>How do I create a category?</summary>
+                <div class="answer">
+                    Go to <strong>Settings → Categories</strong>, or tap <em>Manage Categories</em> in the Documents tab. Tap <strong>+</strong> to create a new category. You can assign a colour, an icon, and optionally nest it under a parent category to create a hierarchy.
+                </div>
+            </details>
+
+            <details>
+                <summary>Can I move a document from one category to another?</summary>
+                <div class="answer">
+                    Open the document, tap <strong>Edit</strong> (or the menu <strong>⋯</strong>), and change the <em>Category</em> field. Tap <strong>Save</strong> to confirm.
+                </div>
+            </details>
+
+            <details>
+                <summary>Is there a limit to how many categories I can have?</summary>
+                <div class="answer">
+                    There is no enforced limit. However, for best performance and usability, organising into a manageable hierarchy (under 200 categories) is recommended.
+                </div>
+            </details>
+
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <h2 id="backup">💾 Backup &amp; Restore</h2>
+        <div class="section-group">
+
+            <div class="highlight">
+                <strong>⚠️ Important:</strong> Backups stored only inside the app are deleted when you uninstall DocsShelf. Always tap <strong>Share</strong> after creating a backup to save it to Google Drive, your Downloads folder, or another external location.
+            </div>
+
+            <details>
+                <summary>Where are my backups stored?</summary>
+                <div class="answer">
+                    By default, backups are stored inside the app's private storage on your device. This storage is deleted if you uninstall the app. To keep a backup safe, always tap <strong>Share (Recommended)</strong> after creating one to save it to Google Drive, another cloud service, or your device's Downloads folder.
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I create a backup?</summary>
+                <div class="answer">
+                    Go to <strong>Settings → Backup &amp; Restore → Create Backup</strong>. Wait for the backup to complete, then tap <strong>Share (Recommended)</strong> to save it outside the app. Do not rely on the internal-only copy for reinstallation.
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I restore from a backup?</summary>
+                <div class="answer">
+                    Go to <strong>Settings → Backup &amp; Restore → Restore</strong>. Tap <em>Select Backup File</em> and locate your <code>.docsshelf</code> backup file (from Google Drive, Downloads, etc.). Enter your backup password if one was set, then confirm the restore.
+                </div>
+            </details>
+
+            <details>
+                <summary>What is included in a backup?</summary>
+                <div class="answer">
+                    A full backup includes all your documents (files), categories, tags, notes, and settings. Encrypted documents are backed up in their encrypted form. Your account password is <strong>NOT</strong> stored in the backup file.
+                </div>
+            </details>
+
+            <details>
+                <summary>I uninstalled the app and lost my documents. Can I recover them?</summary>
+                <div class="answer">
+                    If you previously shared a backup to Google Drive, Downloads, email, or another external location, you can restore from that file after reinstalling. Internal-only backups are deleted on uninstall. The developer cannot recover data that was not externally backed up.
+                </div>
+            </details>
+
+            <details>
+                <summary>What is Auto Backup?</summary>
+                <div class="answer">
+                    Auto Backup creates a backup automatically on a schedule (daily, weekly, or monthly). These backups are stored internally inside the app. You must still tap <strong>Share</strong> on any backup you want to preserve across reinstalls or device changes.
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I set a password on my backup?</summary>
+                <div class="answer">
+                    When creating a backup you will be prompted to optionally set a backup password. This encrypts the backup file itself. You must remember this password — it cannot be recovered and the backup cannot be opened without it.
+                </div>
+            </details>
+
+            <details>
+                <summary>Why does the backup statistics section show 0 backups?</summary>
+                <div class="answer">
+                    Statistics are per-account. If you recently switched accounts or logged in with a different email, the count reflects only the backups for your current account. Backups created under a different account are not shown.
+                </div>
+            </details>
+
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <h2 id="security">🔒 Security &amp; Privacy</h2>
+        <div class="section-group">
+
+            <details>
+                <summary>How are my documents encrypted?</summary>
+                <div class="answer">
+                    Documents are encrypted using <strong>AES-256-GCM</strong>. The encryption key is derived from your account password using <strong>Argon2id</strong>. Your plain-text password is never stored anywhere on the device.
+                </div>
+            </details>
+
+            <details>
+                <summary>Does DocsShelf send my documents to a server?</summary>
+                <div class="answer">
+                    <strong>No.</strong> DocsShelf is 100% offline. Documents, passwords, and personal data never leave your device. There are no servers, no cloud sync, and no analytics that include your documents.
+                </div>
+            </details>
+
+            <details>
+                <summary>What happens to my data if I delete the app?</summary>
+                <div class="answer">
+                    All app data (documents, categories, settings, and internal backups) is <strong>permanently deleted</strong> when you uninstall the app. Always share backups externally before uninstalling.
+                </div>
+            </details>
+
+            <details>
+                <summary>Can I use biometric login (fingerprint / face unlock)?</summary>
+                <div class="answer">
+                    Yes. Go to <strong>Settings → Security → Biometric Login</strong> and enable it. Biometric authentication is used instead of your password on subsequent logins. Your password is still required as a fallback if biometric authentication fails.
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I change my account password?</summary>
+                <div class="answer">
+                    Go to <strong>Settings → Security → Change Password</strong>. Enter your current password, then your new password twice. All encrypted documents are automatically re-encrypted with the new key.
+                </div>
+            </details>
+
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <h2 id="troubleshooting">🔧 Troubleshooting</h2>
+        <div class="section-group">
+
+            <details>
+                <summary>The app crashes when I open it. What should I do?</summary>
+                <div class="answer">
+                    <ol>
+                        <li>Force-close the app and reopen it.</li>
+                        <li>If the crash persists, clear the app cache: <strong>Android Settings → Apps → DocsShelf → Storage → Clear Cache</strong>. This does <em>not</em> delete your documents.</li>
+                        <li>If the problem continues, reinstall — but ensure you have an external backup first.</li>
+                    </ol>
+                </div>
+            </details>
+
+            <details>
+                <summary>I cannot log in even though I know my password.</summary>
+                <div class="answer">
+                    Passwords are case-sensitive. Check that Caps Lock is not on. If you are certain the password is correct, verify you are using the correct account email. If you have MFA enabled, ensure your authenticator app time is synchronised.
+                </div>
+            </details>
+
+            <details>
+                <summary>The camera scanner is not detecting document edges.</summary>
+                <div class="answer">
+                    <ul>
+                        <li>Place the document on a plain contrasting background (e.g., white paper on a dark desk).</li>
+                        <li>Ensure there is sufficient lighting and the document is fully visible within the frame.</li>
+                        <li>Try manually tapping the corners to define the crop area.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Sharing a backup fails with an error.</summary>
+                <div class="answer">
+                    This usually means no sharing apps (Drive, Gmail, etc.) are available or the file path is inaccessible. Ensure Google Drive or another app is installed. Try tapping Share again — sometimes a one-time permission dialog needs to be accepted first.
+                </div>
+            </details>
+
+            <details>
+                <summary>The app feels slow or the document list takes a long time to load.</summary>
+                <div class="answer">
+                    Large numbers of documents (1,000+) with unoptimised thumbnails can slow loading. Go to <strong>Settings → Storage &amp; Performance → Optimise Database</strong> to run a VACUUM and rebuild indexes. Also ensure the device has sufficient free storage.
+                </div>
+            </details>
+
+            <details>
+                <summary>How do I report a bug or request a feature?</summary>
+                <div class="answer">
+                    Go to <strong>Settings → About → Feedback</strong> and send us an email, or write directly to <a href="mailto:support@docsshelf.com">support@docsshelf.com</a>. Include the app version (shown on the About screen), a description of the issue, and steps to reproduce it. We read every report.
+                </div>
+            </details>
+
+            <details>
+                <summary>I restored a backup but some documents are missing.</summary>
+                <div class="answer">
+                    Selective backups only include documents in specific categories at the time of backup. Check whether a <em>full</em> or <em>selective</em> backup was used. Also confirm the backup file date — only documents that existed before the backup was created are included.
+                </div>
+            </details>
+
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════ -->
+        <div class="info-box">
+            <strong>Still have a question?</strong><br>
+            Email us at <a href="mailto:support@docsshelf.com">support@docsshelf.com</a> — we typically respond within 1–2 business days.
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 DocsShelf. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="../privacy-policy/">Privacy Policy</a> &nbsp;|&nbsp;
+                <a href="../terms-of-service/">Terms of Service</a> &nbsp;|&nbsp;
+                <a href="../faq/">FAQ</a>
+            </p>
+            <p style="margin-top: 8px;">Contact: <a href="mailto:feedback@docsshelf.com">feedback@docsshelf.com</a></p>
+        </div>
+    </div>
+</body>
+</html>
